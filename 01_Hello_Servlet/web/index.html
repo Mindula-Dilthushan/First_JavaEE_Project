@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <title>Hello Servlet</title>
 </head>
 <body>
@@ -9,5 +10,23 @@
 
 <a href="hello"> Send Request to Hello Servlet</a> <br>
 <a href="customer"> Send Request to Customer Servlet</a>
+
+<br>
+<br>
+
+<form action="customer">
+    <input name="id" placeholder="Input Your ID" type="text">
+    <button type="submit" class="btn btn-primary">Send ID</button>
+</form>
+
+<br>
+<br>
+
+<form action="hello">
+    <input name="id" placeholder="Input Your Name" type="text">
+    <button type="submit" class="btn btn-danger">Send Name</button>
+</form>
+
 </body>
+<script src="assets/js/bootstrap.js"></script>
 </html>
