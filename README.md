@@ -11,3 +11,9 @@
 
 ## Customer and Hello page link
 ![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/04%20Send%20Request%20customer%20and%20hello%20page%20to%20go.jpg)
+
+## Input Form 
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/05%20Input%20ID%20and%20Name.jpg)
+
+## Input data view
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/06%20Input%20data%20output.png)
