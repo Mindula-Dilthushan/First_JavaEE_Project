@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/customer")
 public class Customer extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         response.getWriter().write("Hello Customer");
