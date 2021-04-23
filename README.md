@@ -17,3 +17,6 @@
 
 ## Input data view
 ![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/06%20Input%20data%20output.png)
+
+## Default doGet / Manuallay select doPost
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/07%20Customer%20doPost%20Called.jpg)
