@@ -25,3 +25,7 @@
 ![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/08%20Customer%20doPut%20Calledjpg.jpg)
 
 ![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/09%20Customer%20doDelete%20Called.jpg)
+
+
+## Life Cycle 
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/10%20lifeCycle.jpg)
