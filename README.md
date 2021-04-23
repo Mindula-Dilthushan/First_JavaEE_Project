@@ -20,3 +20,8 @@
 
 ## Default doGet / Manually select doPost
 ![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/07%20Customer%20doPost%20Called.jpg)
+
+## doPut Called and doDelete Called
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/08%20Customer%20doPut%20Calledjpg.jpg)
+
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/09%20Customer%20doDelete%20Called.jpg)
