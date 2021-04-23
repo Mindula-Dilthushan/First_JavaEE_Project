@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lifeCycle">
+    <output-path>$PROJECT_DIR$/out/artifacts/lifeCycle</output-path>
+    <root id="archive" name="lifeCycle.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="02_Life_Cycle" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="02_Life_Cycle/web/Web" />
+    </root>
+  </artifact>
+</component>
