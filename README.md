@@ -29,3 +29,6 @@
 
 ## Life Cycle 
 ![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/10%20lifeCycle.jpg)
+
+##Simple POS Using JSP
+![mindula](https://github.com/Mindula-Dilthushan/First_JavaEE_Project/blob/master/images/11%20Simple%20Pos%20Using%20JSP.jpg)
