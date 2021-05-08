@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple POS</title>
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<main class="container-fluid">
+    <section class="row">
+        <h1>Customer Manage</h1>
+    </section>
+    <section class="row">
+        <div class="col-md-4">
+            <form id="formCustomer">
+                <div>
+                    <label class="form-label" for="id">Customer ID</label>
+                    <input class="form-control" id="id" name="id" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="name">Customer Name</label>
+                    <input class="form-control" id="name" name="name" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="address">Customer Address</label>
+                    <input class="form-control" id="address" name="address" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="salary">Customer Salary</label>
+                    <input class="form-control" id="salary" name="salary" type="text">
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-primary" id="btnSave" type="button">Save Customer</button>
+                    <button class="btn btn-primary" id="btnLoad" type="button">Load all Customers</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+
+<script src="assests/jquery-3.6.0.min.js"></script>
+<script src="assests/js/bootstrap.min.js"></script>
+<script>
+    $("#btnLoad").click(function () {
+        loadAllCustomers();
+    });
+    loadAllCustomers();
+
+    function loadAllCustomers() {
+        $("#tbody").empty();
+        $.ajax({
+            url: 'customer',
+            method: 'get',
+            async: true,
+            dataType: "json", // convert response into JSON if valid
+            success: function (data, textState, xhr) {
+                // let ob = JSON.parse(data); // do the same thing
+                for (let cus of data) {
+                    var row = `<tr><td>${cus.id}</td><td>${cus.name}</td><td>${cus.address}</td><td>${cus.salary}</td></tr>`;
+                    $("#tbody").append(row);
+                }
+            }
+        });
+    }
+
+
+    $("#btnSave").click(function () {
+
+        // let id = $("#id").val();
+        // let name = $("#name").val();
+        // let address = $("#address").val();
+        // let salary = $("#salary").val();
+
+        var form = $("#formCustomer").serialize();
+
+        $.ajax({
+            url: 'customer',
+            method: 'post',
+            async: true,
+            data: form,
+            // contentType:"application/x-www-form-urlencoded",
+            success: function (data) {
+                console.log(data);
+                loadAllCustomers();
+
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+</head>
+<body>
+<h1>Async Web APIs in JS (non blocking)</h1>
+<h2 id="dis"></h2>
+<h3 id="count"></h3>
+<ul>
+    <li>AJAX</li>
+    <li>Events</li>
+    <li>Timers</li>
+</ul>
+
+<button id="btn">Stop</button>
+
+
+<script>
+    // Timers also have async (non blocking) behaviour
+    var dis = document.getElementById("dis");
+    var c = document.getElementById("count");
+    var btn = document.getElementById("btn");
+
+    // setTimeout(); // wait some time and call a method only once
+    var id2 = setTimeout(callAfterSomeTime, 3000);
+
+    function callAfterSomeTime() {
+        dis.innerText = "Set After 3000";
+    }
+
+    dis.innerText = "Started";
+
+    // setInterval(); // repeat the method called after time completed
+    var i = 0;
+
+    function count() {
+        i++;
+        c.innerText = i;
+    }
+
+    //timers always return a id
+    var id = setInterval(count, 100);
+
+    //how to stop a timer
+    btn.addEventListener("click", function () {
+        clearInterval(id);//stop Set Interval
+        clearTimeout(id2); // stop set timeout
+    });
+
+    // http://latentflip.com/loupe/?code=!!!
+
+</script>
+</body>
+</html>

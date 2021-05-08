@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<header class="container-fluid">
+    <h1 id="display">AJAX</h1>
+</header>
+<section class="container-fluid mt-3">
+    <section class="row">
+        <div class="col-md-4">
+            <form>
+                <div>
+                    <label class="form-label" for="id">Customer ID</label>
+                    <input class="form-control" id="id" name="id" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="name">Customer Name</label>
+                    <input class="form-control" id="name" name="name" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="address">Customer Address</label>
+                    <input class="form-control" id="address" name="address" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="salary">Customer Salary</label>
+                    <input class="form-control" id="salary" name="salary" type="text">
+                </div>
+                <div class="btn-group mt-5">
+                    <button class="btn btn-primary" id="btnSaveCustomer" type="button">Register Customer</button>
+                    <button class="btn btn-danger" type="button">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+
+
+<script src="js/bootstrap.js"></script>
+<script>
+    //checking browser compatibility
+    // var http;
+    // if (window.ActiveX) {
+    //     http = new ActiveX();
+    //     console.log("ActiveX");
+    // } else if (window.XMLHttpRequest) {
+    //     console.log("XMLHttpRequest");
+    //     http = new XMLHttpRequest();
+    // }
+
+    //sending a AJAX request with XMLHttpRequest Object
+    // var btn = document.getElementById("btnSaveCustomer");
+    // btn.addEventListener("click", function () {
+    //     var xml = new XMLHttpRequest();
+    //     xml.open("GET", "customer"); //404
+    //     xml.send();
+    // });
+
+
+    // //sending a request to file (db.txt)
+    // var btn = document.getElementById("btnSaveCustomer");
+    // btn.addEventListener("click", function () {
+    //     var xml = new XMLHttpRequest();
+    //     console.log("1 " + xml.readyState);//0 uninitialized
+    //
+    //     xml.open("GET", "db/db.txt"); //200
+    //     console.log("2 " + xml.readyState); //1 loading
+    //
+    //     xml.send();
+    //     console.log("3 " + xml.readyState);////1 loading
+    //
+    //     xml.onreadystatechange = function () {
+    //         console.log("Event " + xml.readyState); //2,3,4 loaded,processing,completed
+    //         //get the response after request completed
+    //
+    //         if (xml.readyState == 4 && xml.status == 200) {
+    //             console.log(xml.response);
+    //         }
+    //     }
+    // });
+
+
+    //sending a request to file (db.txt) and getting response
+    var btn = document.getElementById("btnSaveCustomer");
+    var dis = document.getElementById("display");
+    btn.addEventListener("click", function () {
+        console.log("Started");
+        var xml = new XMLHttpRequest();
+        xml.open("GET", "db/db.txt", true); //200 Async  (Non Blocking) default
+        // xml.open("GET", "db/db.txt", false); //200 sync (Blocking)
+        xml.onreadystatechange = function () {
+            if (xml.readyState == 4 && xml.status == 200) {
+                dis.innerText = xml.response;
+                console.log(xml.response);
+            }
+        }
+        xml.send();
+        console.log("Ended..");
+    });
+</script>
+</body>
+</html>

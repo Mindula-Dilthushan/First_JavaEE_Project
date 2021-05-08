@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX With Jquery</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<header class="container-fluid">
+    <h1 id="display">AJAX</h1>
+</header>
+<section class="container-fluid mt-3">
+    <section class="row">
+        <div class="col-md-4">
+            <form>
+                <div>
+                    <label class="form-label" for="id">Customer ID</label>
+                    <input class="form-control" id="id" name="id" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="name">Customer Name</label>
+                    <input class="form-control" id="name" name="name" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="address">Customer Address</label>
+                    <input class="form-control" id="address" name="address" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="salary">Customer Salary</label>
+                    <input class="form-control" id="salary" name="salary" type="text">
+                </div>
+                <div class="btn-group mt-4">
+                    <button class="btn btn-primary" id="btnSaveCustomer" type="button">Register Customer</button>
+                    <button class="btn btn-warning" id="btnTxt" type="button">Send Text Request</button>
+                    <button class="btn btn-success" id="btnXML" type="button">Send XML Request</button>
+                    <button class="btn btn-info" id="btnJson" type="button">Send JSON Request</button>
+                    <button class="btn btn-danger" type="button">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+
+    /*//sending a request to file (db.txt) and getting response
+    var btn = document.getElementById("btnSaveCustomer");
+    var dis = document.getElementById("display");
+    btn.addEventListener("click", function () {
+        console.log("Started");
+        var xml = new XMLHttpRequest();
+        xml.open("GET", "db/db.txt", true); //200 Async  (Non Blocking) default
+        // xml.open("GET", "db/db.txt", false); //200 sync (Blocking)
+        xml.onreadystatechange = function () {
+            if (xml.readyState == 4 && xml.status == 200) {
+                dis.innerText = xml.response;
+                console.log(xml.response);
+            }
+        }
+        xml.send();
+        console.log("Ended..");
+    });
+*/
+
+    $("#btnTxt").click(function () {
+        // var configOb = {
+        //     method: 'GET',
+        //     url: 'db/db.txt',
+        //     async: true,
+        //     success: function (response) {
+        //         console.log(response);
+        //     }
+        // }
+        // $.ajax(configOb);
+        //
+
+        // Send ajax request using jQuery for text response
+        $.ajax({
+            method: 'GET',
+            url: 'db/db.txt',
+            async: true,
+            success: function (response) {
+                $("#display").text(response);
+            }
+        });
+
+    });
+
+    //sending request for XML response
+    $("#btnXML").click(function () {
+        // Send ajax request using jQuery
+        $("#tbody").empty();
+        $.ajax({
+            method: 'GET',
+            url: 'db/db.xml',
+            async: true,
+            success: function (response) {
+                let a = $(response).children('customers').children();
+                for (let i = 0; i < a.length; i++) {
+                    let id = $(a[i]).find("id").text();
+                    let name = $(a[i]).find("name").text();
+                    let address = $(a[i]).find("address").text();
+                    let salary = $(a[i]).find("salary").text();
+
+                    let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
+                    $("#tbody").append(row);
+                }
+            }
+        });
+    });
+
+    //Sending request for json response
+    $("#btnJson").click(function () {
+        // Send ajax request using jQuery
+        $("#tbody").empty();
+        $.ajax({
+            method: 'GET',
+            url: 'db/db.json',
+            async: true,
+            success: function (response) {
+                // console.log(response);//object
+                for (var i of response) {
+                    let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.address}</td><td>${i.salary}</td></tr>`;
+                    $("#tbody").append(row);
+                }
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>
