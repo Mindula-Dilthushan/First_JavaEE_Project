@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/01_Hello_Servlet/01_Hello_Servlet.iml" filepath="$PROJECT_DIR$/01_Hello_Servlet/01_Hello_Servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/02_Life_Cycle/02_Life_Cycle.iml" filepath="$PROJECT_DIR$/02_Life_Cycle/02_Life_Cycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/03_Servlet_Mapping/03_Servlet_Mapping.iml" filepath="$PROJECT_DIR$/03_Servlet_Mapping/03_Servlet_Mapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_Simple_Pos/04_Simple_Pos.iml" filepath="$PROJECT_DIR$/04_Simple_Pos/04_Simple_Pos.iml" />
     </modules>
   </component>
 </project>
