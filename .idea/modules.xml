@@ -9,6 +9,11 @@
       <module fileurl="file://$PROJECT_DIR$/05_Ajax/05_Ajax.iml" filepath="$PROJECT_DIR$/05_Ajax/05_Ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/06_Timers/06_Timers.iml" filepath="$PROJECT_DIR$/06_Timers/06_Timers.iml" />
       <module fileurl="file://$PROJECT_DIR$/07_POS_With_AJAX/07_POS_With_AJAX.iml" filepath="$PROJECT_DIR$/07_POS_With_AJAX/07_POS_With_AJAX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08_JSONP/08_JSONP.iml" filepath="$PROJECT_DIR$/08_JSONP/08_JSONP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_DBCP/09_DBCP.iml" filepath="$PROJECT_DIR$/09_DBCP/09_DBCP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10_InCP/10_InCP.iml" filepath="$PROJECT_DIR$/10_InCP/10_InCP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11_FileUpload/11_FileUpload.iml" filepath="$PROJECT_DIR$/11_FileUpload/11_FileUpload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12_Filters/12_Filters.iml" filepath="$PROJECT_DIR$/12_Filters/12_Filters.iml" />
     </modules>
   </component>
 </project>

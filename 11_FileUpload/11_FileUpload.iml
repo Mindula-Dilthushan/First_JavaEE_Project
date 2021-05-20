@@ -9,7 +9,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
-        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -20,7 +19,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.23" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.5.65" level="application_server_libraries" />
+    <orderEntry type="library" name="commons-dbcp2-2.8.0" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="JSONP" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.23" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.65" level="application_server_libraries" />
   </component>
 </module>

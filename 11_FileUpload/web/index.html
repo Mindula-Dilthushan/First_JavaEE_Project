@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Upload a file Using Servlet</h1>
+            <form action="up" enctype="multipart/form-data" method="post">
+                <label class="form-label" for="file1">Select a file</label>
+                <input class="form-control" id="file1" name="file" type="file">
+                <button class="btn btn-danger mt-3">Upload</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Send Ajax Request</h2>
+            <form>
+                <label class="form-label" for="file">Select a file</label>
+                <input class="form-control" id="file" name="file" type="file">
+                <button class="btn btn-danger mt-3" id="btnSendFile" type="button">Upload</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<script src="assests/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btnSendFile").click(function () {
+
+        var fileObject = $("#file")[0].files[0];//access file object from input field
+        var fileName = $("#file")[0].files[0].name; //get file name
+
+        var data = new FormData(); //setup form data object to send file data
+        data.append("file", fileObject, fileName); //append data
+
+        $.ajax({
+            url: 'up',
+            method: 'post',
+            async: true,
+            processData: false, //stop processing data of request body
+            contentType: false, // stop setting content type by jQuery
+            data: data,
+            success: function () {
+                alert("File Uploaded");
+            }
+        });
+    });
+</script>
+</body>
+</html>

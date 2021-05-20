@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="JSONP">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/javax.json-1.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.json-api-1.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dbcp/commons-dbcp2-2.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dbcp/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dbcp/commons-pool2-2.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
